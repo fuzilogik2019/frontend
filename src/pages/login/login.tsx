@@ -2,13 +2,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { observer } from 'mobx-react-lite';
 import * as yup from 'yup';
-
-import Button from '#/components/button';
-import Input from '#/components/input';
 import useAxios from '#/hooks/utils/useAxios';
 import { useAuth } from '#/context/AuthContext';
 import { ILoginProps } from './types';
 import { paths } from '#/routes/paths';
+import { Input, Button } from '@material-tailwind/react';
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -82,36 +80,37 @@ const LoginPage: React.FC = () => {
             />
           </div>
         </div>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
-            <Input
-              label="DNI"
-              type="text"
-              id="dni"
-              placeholder="Ingresa tu DNI"
-              onChange={dniChange}
-              onBlur={handleBlur}
-              error={!!errors.dni && !!touched.dni}
-            />
-          </div>
-          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
-            <Input
-              label="Contraseña"
-              type="password"
-              id="password"
-              placeholder="Ingresa tu Contraseña"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={!!errors.password && !!touched.password}
-            />
-          </div>
+        <form className="w-full space-y-4" onSubmit={handleSubmit}>
+          <Input
+            variant="outlined"
+            label="DNI"
+            id="dni"
+            size="lg"
+            color="purple"
+            onChange={dniChange}
+            onBlur={handleBlur}
+            error={!!errors.dni && !!touched.dni}
+          />
+          <Input
+            variant="outlined"
+            type="password"
+            id="password"
+            label="Contraseña"
+            size="lg"
+            color="purple"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={!!errors.password && !!touched.password}
+          />
           <div className="flex flex-col items-center text-lg">
             <Button
-              className="w-full p-4 text-xl font-semibold tracking-wider text-white bg-violet-brand rounded-xl"
+              color="purple"
               type="submit"
-              label="Ingresar"
               onClick={handleClick}
-            />
+              className="w-full"
+            >
+              Ingresar
+            </Button>
 
             <Link
               to={paths.totalResults}

@@ -6,7 +6,7 @@ import { HamburgerProvider } from './context/HamburgerContext';
 import { CertificateProvider } from './context/CertificationContext';
 import Overlay from './components/overlay';
 import './App.css';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider } from '@material-tailwind/react';
 
 function App() {
   // Colores definidos
@@ -21,7 +21,7 @@ function App() {
   };
 
   // Creación del tema personalizado
-  const theme = createTheme({
+  const theme = {
     palette: {
       primary: {
         main: colors.violetBrand,
@@ -42,13 +42,12 @@ function App() {
         secondary: colors.darkGray,
       },
     },
-    // Aquí puedes también sobrescribir otros aspectos del tema como tipografía, transiciones, etc.
-  });
+  };
 
   return (
     <AuthProvider>
       <CertificateProvider>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider value={theme}>
           <Suspense fallback={<LoadingPage />}>
             <HamburgerProvider>
               <Overlay>
