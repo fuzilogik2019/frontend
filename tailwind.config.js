@@ -8,8 +8,20 @@ export default withMT({
   theme: {
     extend: {
       colors: {
-        violetBrandLight: '#714FB6',
-        violetBrand: '#493570',
+        background: '#F2F2F2',
+        uxp: '#23B2E8',
+        'violet-brand': '#61439D',
+        'violet-primary': '#714FB6',
+        'violet-dark': '#3C2865',
+        'violet-light': '#8B6ACE',
+        'violet-light-2': '#E4DEF6',
+        'gray-dark': '#64748B',
+        'gray-inactive': '#CACACB',
+        'gray-light': '#CBD5E1',
+        'text-off': '#363F45',
+        red: '#AD3459',
+        green: '#58C299',
+        black: '#000000',
         white: '#FFFFFF',
         black: '#000000',
         lightGray: '#E3E3E9',

@@ -64,44 +64,53 @@ const LoginPage: React.FC = () => {
   }
 
   return (
-    <section className="relative flex flex-col items-center h-screen overflow-hidden bg-gray-100">
-      <div className="z-10 w-5/6 p-4 md:w-1/2 shadow-3xl rounded-xl">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-center my-10">
+    <section className="relative flex flex-col items-center h-screen overflow-hidden bg-gray-100 pt-20">
+      <div className="shadow-3xl rounded-xl">
+        <div className="container">
+          <div className="flex items-center justify-center my-10 w-30 ">
             <img
-              src="assets/logos/fenix.png"
+              src="assets/logos/fenix-login.svg"
               alt="fenix"
-              className="object-cover h-auto mr-4 rounded w-28"
-            />
-            <img
-              src="assets/logos/lla.svg"
-              alt="lla"
-              className="object-cover h-auto rounded w-50"
+              className="object-cover h-auto rounded w-40"
             />
           </div>
         </div>
-        <form className="w-full space-y-4" onSubmit={handleSubmit}>
-          <Input
-            variant="outlined"
-            label="DNI"
-            id="dni"
-            size="lg"
-            color="purple"
-            onChange={dniChange}
-            onBlur={handleBlur}
-            error={!!errors.dni && !!touched.dni}
-          />
-          <Input
-            variant="outlined"
-            type="password"
-            id="password"
-            label="Contraseña"
-            size="lg"
-            color="purple"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={!!errors.password && !!touched.password}
-          />
+
+        <div className=" flex flex-col p-4 pt-2 pb-10 ">
+          <span className="text-3xl">Entre todos,</span>
+          <span className="text-3xl font-bold text-indigo-900">
+            evitemos el fraude.
+          </span>
+        </div>
+        <form className="w-full" onSubmit={handleSubmit}>
+          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
+            <Input
+              InputProps={{ style: { borderRadius: '8px' } }}
+              sx={{ width: '100%' }}
+              label="DNI"
+              type="text"
+              id="dni"
+              placeholder="DNI"
+              onChange={dniChange}
+              onBlur={handleBlur}
+              error={!!errors.dni && !!touched.dni}
+            />
+          </div>
+          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
+            <Input
+              InputProps={{
+                style: { borderRadius: '8px' },
+              }}
+              sx={{ width: '100%' }}
+              label="Contraseña"
+              type="password"
+              id="password"
+              placeholder="Contraseña"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={!!errors.password && !!touched.password}
+            />
+          </div>
           <div className="flex flex-col items-center text-lg">
             <Button
               color="purple"
@@ -114,21 +123,13 @@ const LoginPage: React.FC = () => {
 
             <Link
               to={paths.totalResults}
-              className="mt-8 text-lg text-center text-gray-600 underline"
+              className="mt-24 text-lg text-center text-violet-light underline"
             >
-              Ir a resultados
+              Ver escrutinios
             </Link>
           </div>
         </form>
       </div>
-
-      <div
-        className="absolute left-0 right-0 bottom-0 h-screen bg-violet-brand"
-        style={{
-          clipPath: 'polygon(0 90%, 100% 80%, 100% 100%, 0% 100%)',
-        }}
-      />
-
       {/* 
         // TODO: FIX FOOTER IMAGE DESIGN 
         // https://www.figma.com/file/iO7j93Rxbk2nIfYdqpAmv2/%F0%9F%A6%85-APP-Fiscalizaci%C3%B3n-Libertaria-%7C-%F0%9F%93%B1-FINAL?type=design&node-id=59-4193&mode=dev
