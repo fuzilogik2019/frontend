@@ -7,6 +7,7 @@ import { CertificateProvider } from './context/CertificationContext';
 import Overlay from './components/overlay';
 import './App.css';
 import { ThemeProvider } from '@material-tailwind/react';
+import { FilterProvider } from './context/FilterContext';
 
 function App() {
   //TO DO - Custom Input Size
@@ -50,7 +51,9 @@ function App() {
           <Suspense fallback={<LoadingPage />}>
             <HamburgerProvider>
               <Overlay>
-                <AppRoutes />
+                <FilterProvider>
+                  <AppRoutes />
+                </FilterProvider>
               </Overlay>
             </HamburgerProvider>
           </Suspense>
