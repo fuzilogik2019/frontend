@@ -64,71 +64,75 @@ const LoginPage: React.FC = () => {
   }
 
   return (
-    <section className="relative flex flex-col items-center h-screen overflow-hidden bg-gray-100 pt-20">
-      <div className="shadow-3xl rounded-xl">
-        <div className="container">
-          <div className="flex items-center justify-center my-10 w-30 ">
-            <img
-              src="assets/logos/fenix-login.svg"
-              alt="fenix"
-              className="object-cover h-auto rounded w-40"
-            />
-          </div>
+    <section className="relative flex flex-col items-center h-screen justify-center overflow-hidden bg-gray-100">
+      <div className="shadow-3xl rounded-xl p-6">
+        <div className="container flex justify-center mb-10">
+          <img
+            src="assets/logos/fenix-login.svg"
+            alt="fenix"
+            className="object-cover h-auto rounded w-[100px]"
+          />
         </div>
 
-        <div className=" flex flex-col p-4 pt-2 pb-10 ">
-          <span className="text-3xl">Entre todos,</span>
+        <div className="text-center mb-10">
+          <span className="text-3xl">
+            Entre todos,
+            <br />
+          </span>
           <span className="text-3xl font-bold text-indigo-900">
             evitemos el fraude.
           </span>
         </div>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
-            <Input
-              InputProps={{ style: { borderRadius: '8px' } }}
-              sx={{ width: '100%' }}
-              label="DNI"
-              type="text"
-              id="dni"
-              placeholder="DNI"
-              onChange={dniChange}
-              onBlur={handleBlur}
-              error={!!errors.dni && !!touched.dni}
-            />
-          </div>
-          <div className="flex items-center mb-6 text-lg md:mb-8 shadow-3xl">
-            <Input
-              InputProps={{
-                style: { borderRadius: '8px' },
-              }}
-              sx={{ width: '100%' }}
-              label="Contraseña"
-              type="password"
-              id="password"
-              placeholder="Contraseña"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={!!errors.password && !!touched.password}
-            />
-          </div>
-          <div className="flex flex-col items-center text-lg">
-            <Button
-              color="purple"
-              type="submit"
-              onClick={handleClick}
-              className="w-full"
-            >
-              Ingresar
-            </Button>
 
-            <Link
-              to={paths.totalResults}
-              className="mt-24 text-lg text-center text-violet-light underline"
-            >
-              Ver escrutinios
-            </Link>
-          </div>
-        </form>
+        <div className="flex justify-center items-center w-full">
+          <form className="w-full max-w-lg" onSubmit={handleSubmit}>
+            <div className="mb-6 text-lg md:mb-8 shadow-3xl">
+              <Input
+                label="DNI"
+                type="text"
+                id="dni"
+                placeholder="DNI"
+                onChange={dniChange}
+                onBlur={handleBlur}
+                size="lg"
+                error={!!errors.dni && !!touched.dni}
+                variant="outlined"
+                color="deep-purple"
+              />
+            </div>
+            <div className="mb-6 text-lg">
+              <Input
+                label="Contraseña"
+                type="password"
+                id="password"
+                placeholder="Contraseña"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                size="lg"
+                error={!!errors.password && !!touched.password}
+                color="deep-purple"
+              />
+            </div>
+            <div className="flex flex-col">
+              <Button
+                color="deep-purple"
+                type="submit"
+                onClick={handleClick}
+                className="w-full"
+                size="lg"
+              >
+                Ingresar
+              </Button>
+
+              <Link
+                to={paths.totalResults}
+                className="mt-24 text-sm text-center text-violet-light underline"
+              >
+                Ver escrutinios
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
       {/* 
         // TODO: FIX FOOTER IMAGE DESIGN 

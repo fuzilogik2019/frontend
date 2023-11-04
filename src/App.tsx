@@ -9,37 +9,36 @@ import './App.css';
 import { ThemeProvider } from '@material-tailwind/react';
 
 function App() {
-  // Colores definidos
-  const colors = {
-    violetBrandLight: '#714FB6',
-    violetBrand: '#493570',
-    white: '#FFFFFF',
-    black: '#000000',
-    lightGray: '#E3E3E9',
-    darkGray: '#363745',
-    brandRed: '#AD3459',
-  };
-
-  // Creación del tema personalizado
+  //TO DO - Custom Input Size
   const theme = {
-    palette: {
-      primary: {
-        main: colors.violetBrand,
-        light: colors.violetBrandLight,
-      },
-      secondary: {
-        main: colors.brandRed,
-      },
-      error: {
-        main: colors.brandRed,
-      },
-      background: {
-        default: colors.lightGray,
-        paper: colors.white,
-      },
-      text: {
-        primary: colors.black,
-        secondary: colors.darkGray,
+    input: {
+      styles: {
+        variants: {
+          outlined: {
+            sizes: {
+              lg: {
+                container: {
+                  height: 'h-14',
+                  border: '2px',
+                },
+                input: {
+                  fontSize: 'text-md',
+                  px: 'px-3',
+                  py: 'py-[6px]',
+                  borderRadius: 'rounded-lg',
+                },
+                label: {
+                  lineHeight: 'peer-placeholder-shown:leading-[3.9]',
+                  position: '-top-1.5',
+                  fontSize: 'peer-placeholder-shown:text-[18px]',
+                  floated: {
+                    fontSize: 'text-sm peer-focus:text-sm',
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     },
   };
