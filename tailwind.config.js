@@ -8,7 +8,6 @@ export default {
     extend: {
       colors: {
         background: '#F2F2F2',
-        uxp: '#23B2E8',
         'violet-brand': '#61439D',
         'violet-primary': '#714FB6',
         'violet-dark': '#3C2865',
@@ -18,7 +17,6 @@ export default {
         'gray-darker': '#413B50',
         'gray-inactive': '#CACACB',
         'gray-light': '#CBD5E1',
-        'gray-disabled': '#E3E3E9',
         'text-off': '#363F45',
         red: '#AD3459',
         'red-error': '#E13C3C',
@@ -27,6 +25,11 @@ export default {
         black: '#000000',
         white: '#FFFFFF',
         overlay: 'rgba(32, 27, 43, 0.3)',
+
+        party: {
+          lla: '#7C5BC2',
+          uxp: '#23B2E8',
+        },
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
